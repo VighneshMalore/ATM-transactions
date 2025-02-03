@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ATM Transaction tracker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .container { margin: 50px auto; max-width: 600px; }
+        .atm-card { border: 3px solid #73AD21; border-radius: 15px; padding: 30px; }
+        .btn-option { width: 200px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="atm-card">
+            <h2 class="text-center mb-4">Welcome to E-Bank</h2>
+
+            <!-- Error Message (if any) -->
+            <div id="errorMessage" class="text-danger text-center"></div>
+
+            <!-- Login Form -->
+            <div class="text-center">
+                <h4>Existing Users</h4>
+                <form action="servlet1" method="post">
+                    <div class="form-group">
+                        <input type="text" name="accno" class="form-control" placeholder="Account Number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="pinno" class="form-control" placeholder="PIN" required>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-option">Login</button>
+                </form>
+            </div>
+
+            <hr>
+
+            <!-- Create Account Section -->
+            <div class="text-center">
+                <h4>New Users</h4>
+                <a href="create-account.html" class="btn btn-primary btn-option">Create Account</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters and show error message if exists
+        const params = new URLSearchParams(window.location.search);
+        if (params.has("error")) {
+            document.getElementById("errorMessage").innerText = decodeURIComponent(params.get("error"));
+        }
+    </script>
+</body>
+</html>

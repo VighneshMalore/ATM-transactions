@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deposit Money</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .container { margin: 50px auto; max-width: 600px; }
+        .atm-card { border: 3px solid #73AD21; border-radius: 15px; padding: 30px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="atm-card">
+            <h2 class="text-center mb-4">Deposit Money</h2>
+            <form action="TransactionServlet" method="POST">
+                <input type="hidden" name="transactionType" value="deposit">
+                <div class="form-group">
+                    <label>Amount:</label>
+                    <input type="number" name="amount" class="form-control" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success">Deposit</button>
+                   <a href="secondservlet" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

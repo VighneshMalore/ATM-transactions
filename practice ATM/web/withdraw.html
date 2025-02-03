@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Withdraw Money</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Withdraw Money</h2>
+    <form action="TransactionServlet" method="post">
+        <!-- Hidden field to specify transaction type -->
+        <input type="hidden" name="transactionType" value="withdraw">
+        
+        <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" 
+                   step="0.01" min="0.01" required
+                   placeholder="Enter withdrawal amount">
+        </div>
+
+        <button type="submit">Withdraw</button>
+    </form>
+
+    <p><a href="dashboard.html">Back to Dashboard</a></p>
+</body>
+</html>

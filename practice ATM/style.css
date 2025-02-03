@@ -1,0 +1,29 @@
+.container {
+    margin: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 50px;
+}
+
+body {
+    background-color: pink;
+    font-family: Arial, sans-serif;
+}
+
+.btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
